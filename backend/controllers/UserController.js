@@ -52,7 +52,7 @@ const createUser = asyncHandler(async (request, response) => {
 //@route POST /api/user/login
 //@access public
 const loginUser = asyncHandler(async (request, response) => {
-  
+
   const { email, password } = request.body;
   if (!email || !password) {
     response.status(400);
@@ -70,7 +70,7 @@ const loginUser = asyncHandler(async (request, response) => {
           id: user.id,
         }
       },
-      process.env.ACCESS_TOEKN_SECRET,
+      process.env.ACCESS_TOKEN_SECRET,
       {
         expiresIn: "15m",
       }
